@@ -1,21 +1,25 @@
 .contacts {
-    padding: 100px 0;
     background-color: #e1e2e6;
 }
 
 .contacts h2 {
-    font-size: 55px;
-    line-height: 70px;
-    color: #323337;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(28px, 4.5vw, 48px);
+    font-weight: 700;
+    letter-spacing: 1px;
     text-transform: uppercase;
+    color: #1f2933;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
-.contacts .contacts-group {
-    font-size: 16px;
-    color: #414247;
+.contacts-group {
     max-width: 900px;
     margin: 0 auto;
     text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(14px, 1.6vw, 16px);
+    font-weight: 400;
+    color: #414247;
+    line-height: 1.7;
 }

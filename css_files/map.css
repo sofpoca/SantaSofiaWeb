@@ -1,37 +1,59 @@
-#map {
-  flex: 1;
-  height: 420px;
-  border-radius: 12px;
+.branches-layout {
+    display: flex;
+    gap: 30px;
+    align-items: stretch;
+    margin-top: 40px;
+    flex-wrap: wrap;
 }
 
-.branches-layout {
-  display: flex;
-  gap: 30px;
-  align-items: stretch;
-  margin-top: 40px;
+#map {
+    flex: 1 1 380px;
+    min-height: 320px;
+    height: auto;
+    border-radius: 12px;
 }
 
 .branch-slider {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 15px;
+    flex: 1 1 380px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .branch-card {
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  min-height: 320px;
-  flex: 1;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    min-height: 280px;
+    flex: 1;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .slider-btn {
-  background: #111;
-  color: #fff;
-  border: none;
-  padding: 10px 14px;
-  border-radius: 50%;
-  cursor: pointer;
+    background: #111;
+    color: #fff;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.slider-btn:hover {
+    transform: scale(1.1);
+    background-color: #333;
+}
+
+@media (max-width: 768px) {
+    .branches-layout {
+        flex-direction: column;
+    }
+
+    #map {
+        min-height: 280px;
+    }
+
+    .branch-card {
+        min-height: auto;
+    }
 }
