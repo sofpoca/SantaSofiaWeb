@@ -1,4 +1,27 @@
-function selectBranch(i) {
-  index = i;
-  showBranch(i);
+let map;
+
+function initMap() {
+  map = L.map("map").setView([13.782, -88.899], 9);
+
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "© OpenStreetMap"
+  }).addTo(map);
+
+  branches.forEach((branch, i) => {
+    const marker = L.marker(branch.coords).addTo(map);
+
+    marker.on("mouseover", () => {
+      marker.bindPopup(`<b>${branch.title}</b>`).openPopup();
+
+      if (typeof window.goToBranch === "function") {
+        window.goToBranch(i);
+      }
+    });
+
+    marker.on("mouseout", () => {
+      marker.closePopup();
+    });
+  });
 }
+
+document.addEventListener("DOMContentLoaded", initMap);
