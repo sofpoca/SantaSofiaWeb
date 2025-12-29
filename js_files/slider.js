@@ -44,7 +44,6 @@ function goToBranch(i, direction = "slide-right") {
   updateBranch(direction);
 }
 
-// 🔑 Hacerla accesible desde map.js
 window.goToBranch = goToBranch;
 
 updateBranch("slide-right");
