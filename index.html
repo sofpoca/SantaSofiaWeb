@@ -5,92 +5,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ferretería Santa Sofía</title>
+
     <link rel="stylesheet" href="css_files/style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
 </head>
 
 <body>
 
-    <header class="header">
-        <div class="menu-container">
-            <a href="#" class="logo">Logo</a>
 
-            <input type="checkbox" id="menu">
-            <label for="menu">
-                <img src="images/logo.png" class="menu-icon" alt="Menu">
-            </label>
+    <header class="menu-container">
+        <a href="#" class="logo">
+            <img src="images/logo.png" alt="Ferretería Santa Sofía">
+        </a>
 
-            <nav class="navbar">
-                <ul class="nav-list">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Sucursales</a></li>
-                    <li><a href="#">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
-
-        <div class="header-content">
-            <h1>Ferretería Santa Sofía</h1>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati at nam consequuntur explicabo sint.
-            </p>
-            <a href="#" class="btn-primary">Información</a>
-        </div>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sucursales">Sucursales</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section class="branches">
-        <img class="branches-image" src="images/liberta.png" alt="Sucursal">
-
-        <div class="branches-content container">
-            <h2>Nuestras sucursales</h2>
-
-            <p class="section-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </p>
-            
-            <!-- <div id="map"></div>
-            <div class="branch-slider">
-                <button class="slider-btn" id="prev">←</button>
-
-                <div class="branch-card" id="branch-card">
-                    <h3 id="branch-title">La Libertad</h3>
-                    <p id="branch-text">Lorem ipsum dolor sit amet.</p>
-                </div>
-
-                <button class="slider-btn" id="next">→</button>
-            </div> -->
-            <div class="branches-layout">
-
-            <div id="map"></div>
-
-            <div class="branch-slider">
-                <button class="slider-btn" id="prev">←</button>
-
-                <div class="branch-card" id="branch-card">
-                    <h3 id="branch-title">La Libertad</h3>
-                    <p id="branch-text">Lorem ipsum dolor sit amet.</p>
-                </div>
-
-                <button class="slider-btn" id="next">→</button>
-            </div>
-
+    <section class="hero page-section active" id="inicio">
+        <div class="hero-content">
+            <h1>Ferretería Santa Sofía</h1>
+            <p>El mejor lugar en material de construccion</p>
+            <a href="#nosotros" class="btn-primary">Conocenos</a>
         </div>
-
     </section>
 
-    <main class="about">
-        <div class="about-content container">
-            <h2>Nuestra historia</h2>
-            <img src="images/fondo.png" class="about-image" alt="Historia">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem porro alias eligendi, ipsum numquam nihil
-                rerum in quis molestias saepe libero voluptatibus veritatis aut? Sequi optio excepturi atque facere
-                voluptatibus.
+    <section class="branches page-section" id="sucursales">
+        <div class="branches-content container">
+            <h2>Nuestras sucursales</h2>
+            <p class="section-text">
+                Conoce tu ferretería más cercana 
             </p>
+
+            <div class="branches-layout">
+                <div id="map"></div>
+
+                <div class="branch-slider">
+                    <button class="slider-btn" id="prev">←</button>
+
+                    <div class="branch-card" id="branch-card">
+                        <h3 id="branch-title">La Libertad</h3>
+                        <p id="branch-text">Lorem ipsum dolor sit amet.</p>
+                    </div>
+
+                    <button class="slider-btn" id="next">→</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <main class="about page-section" id="nosotros">
+        <div class="about-title">
+            <h2>Nuestra historia</h2>
+        </div>
+        <div class="about-content">
+            <!-- <h2>Nuestra historia</h2> -->
+            <p id="contenido"></p>
+            <script>
+                fetch("origenes.txt")
+                .then(response => response.text())
+                .then(texto => {
+                    document.getElementById("contenido").innerHTML  = texto.replace(/\r?\n/g, "<br>");
+                });
+            </script>
         </div>
     </main>
 
-    <section class="contacts">
+
+    <section class="contacts page-section" id="contacto">
         <h2>Contáctanos</h2>
 
         <div class="contacts-group">
@@ -114,30 +103,37 @@
         </div>
     </section>
 
+
     <footer class="footer">
         <div class="footer-content container">
-            <div class="footer-links">
-                <h3>Síguenos en nuestras redes sociales</h3>
-                <ul>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">Facebook</a></li>
-                </ul>
-            </div>
+            <h3 class="footer-title">Síguenos y contáctanos</h3>
 
-            <div class="footer-links">
-                <h3>Escríbenos a Whatsapp</h3>
-                <ul>
-                    <li><a href="#">+503 67676767</a></li>
-                </ul>
+            <div class="social-icons">
+                <a href="#" class="social-item">
+                    <img src="images/insta.png" alt="Instagram">
+                    <span>Instagram</span>
+                </a>
+
+                <a href="#" class="social-item">
+                    <img src="images/face.png" alt="Facebook">
+                    <span>Facebook</span>
+                </a>
+
+                <a href="#" class="social-item">
+                    <img src="images/whatsapp.png" alt="Whatsapp">
+                    <span>+503 67676767</span>
+                </a>
             </div>
         </div>
     </footer>
 
+
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <!-- <script src="data.js"></script> -->
+    <script src="js_files/navegation.js"></script>
+    <script src="js_files/front.js"></script>
     <script src="js_files/map.js"></script>
     <script src="js_files/slider.js"></script>
-    <!-- <script src="branches.js"></script> -->
 
 </body>
+
 </html>
