@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url("main.css");
+@import url("branches.css");
+@import url("contacts.css");
+@import url("about.css");
+@import url("map.css");
+@import url("footer.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body .hero {
+    font-family: 'Poppins', sans-serif;
+    color: #1a1a1a;
+    background-color: #000000;
+    line-height: 1.6;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: 12px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    padding: 0 60px;
+    background-color: #0d0600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul li a {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 20px;
+    color: rgba(255, 255, 255, 0.85);
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #5E3557;
+    opacity: 1;
+}
+
+.hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 30%;
+  transform: scale(1.15);
+  opacity: 0;
+  transition: transform 10s ease, opacity 1.2s ease;
+  will-change: transform, opacity;
+}
+
+.bg.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+.bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0,0,0,0.75),
+        rgba(11, 6, 0, 0.9)
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+    padding: clamp(20px, 6vw, 100px);
+}
+
+.hero-content h1 {
+    font-size: clamp(34px, 6vw, 500px);
+    font-weight: 700;
+    line-height: 1;
+    color: #fcfcfc;
+    margin-bottom: 25px;
+}
+
+.hero-content p {
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 35px;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 36px;
+    min-width: 180px;
+    background-color: #ce705b;
+    color: #f7cece;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #5E3557;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+section,
+main {
+    padding: 100px 0;
+}
+
+.page-section {
+    display: none;
+    padding-top: 70px;
+    animation: fadeIn 0.4s ease;
+}
+
+.page-section.active {
+    display: block;
+}
+
+.hero.page-section.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1024px) {
+    section,
+    main {
+        padding: 80px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-container {
+        padding: 0 30px;
+    }
+
+    section,
+    main {
+        padding: 70px 0;
+    }
+
+    .btn-primary {
+        width: 100%;
+        padding: 14px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: 85svh;
+    }
+
+    .bg {
+        background-position: center top;
+    }
+}
