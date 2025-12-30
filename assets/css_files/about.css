@@ -50,10 +50,11 @@
     font-size: clamp(14px, 1.6vw, 16px);
     font-weight: 400;
     color: #221f3b;
-
+    margin-top: 25px;
+    margin-bottom: 25px;
     max-width: 1000 px;
-    padding: 10px 50px;
-    margin: 0 auto;
+    padding: 15px 200px;
+    /* margin: 0 auto; */
 
     line-height: 1.8;
 }
