@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ferretería Santa Sofía</title>
 
-    <link rel="stylesheet" href="css_files/style.css">
+    <link rel="stylesheet" href="assets/css_files/style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
 </head>
 
@@ -15,7 +15,7 @@
 
     <header class="menu-container">
         <a href="#" class="logo">
-            <img src="images/logo.png" alt="Ferretería Santa Sofía">
+            <img src="assets/images/logo.png" alt="Ferretería Santa Sofía">
         </a>
 
         <nav class="navbar">
@@ -29,12 +29,16 @@
     </header>
 
     <section class="hero page-section active" id="inicio">
+        <div class="bg active"></div>
+        <div class="bg"></div>
+
         <div class="hero-content">
             <h1>Ferretería Santa Sofía</h1>
             <p>El mejor lugar en material de construccion</p>
             <a href="#nosotros" class="btn-primary">Conocenos</a>
         </div>
     </section>
+
 
     <section class="branches page-section" id="sucursales">
         <div class="branches-content container">
@@ -69,7 +73,7 @@
             <!-- <h2>Nuestra historia</h2> -->
             <p id="contenido"></p>
             <script>
-                fetch("origenes.txt")
+                fetch("assets/origenes.txt")
                 .then(response => response.text())
                 .then(texto => {
                     document.getElementById("contenido").innerHTML  = texto.replace(/\r?\n/g, "<br>");
@@ -110,17 +114,17 @@
 
             <div class="social-icons">
                 <a href="#" class="social-item">
-                    <img src="images/insta.png" alt="Instagram">
+                    <img src="assets/images/insta.png" alt="Instagram">
                     <span>Instagram</span>
                 </a>
 
                 <a href="#" class="social-item">
-                    <img src="images/face.png" alt="Facebook">
+                    <img src="assets/images/face.png" alt="Facebook">
                     <span>Facebook</span>
                 </a>
 
                 <a href="#" class="social-item">
-                    <img src="images/whatsapp.png" alt="Whatsapp">
+                    <img src="assets/images/whatsapp.png" alt="Whatsapp">
                     <span>+503 67676767</span>
                 </a>
             </div>
@@ -129,10 +133,10 @@
 
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="js_files/navegation.js"></script>
-    <script src="js_files/front.js"></script>
-    <script src="js_files/map.js"></script>
-    <script src="js_files/slider.js"></script>
+    <script src="assets/js_files/navegation.js"></script>
+    <script src="assets/js_files/front.js"></script>
+    <script src="assets/js_files/map.js"></script>
+    <script src="assets/js_files/slider.js"></script>
 
 </body>
 
