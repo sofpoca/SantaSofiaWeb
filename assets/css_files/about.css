@@ -49,12 +49,14 @@
     font-family: 'Poppins', sans-serif;
     font-size: clamp(14px, 1.6vw, 16px);
     font-weight: 400;
+    text-align: justify;
     color: #221f3b;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    max-width: 1000 px;
-    padding: 15px 200px;
-    /* margin: 0 auto; */
+
+    max-width: 1000px;
+    margin: 25px auto;
+
+    padding-inline: clamp(16px, 4vw, 32px);
 
     line-height: 1.8;
 }
+
