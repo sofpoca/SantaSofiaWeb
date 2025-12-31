@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.querySelector(".menu-toggle");
+  const navbar = document.querySelector(".navbar");
   const links = document.querySelectorAll(".nav-list a");
   const sections = document.querySelectorAll(".page-section");
 
   function showSection(id) {
     sections.forEach(section => section.classList.remove("active"));
-
     const target = document.getElementById(id);
     if (target) {
       target.classList.add("active");
@@ -12,12 +13,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  menuBtn.addEventListener("click", () => {
+    navbar.classList.toggle("active");
+  });
+
+
   links.forEach(link => {
     link.addEventListener("click", e => {
       e.preventDefault();
       const targetId = link.getAttribute("href").substring(1);
       history.pushState(null, "", `#${targetId}`);
       showSection(targetId);
+
+      navbar.classList.remove("active");
     });
   });
 

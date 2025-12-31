@@ -29,3 +29,4 @@ document.addEventListener('DOMContentLoaded', () => {
   changeBackground();
   setInterval(changeBackground, 6000);
 });
+
